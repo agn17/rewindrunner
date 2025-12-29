@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvfgjruhbxwij"]
+
+[ext_resource type="Script" uid="uid://v88dyu0r1h4g" path="res://Scripts/ghost_platform.gd" id="1_v4qin"]
+[ext_resource type="Texture2D" uid="uid://dofmd7b1chauh" path="res://Assets/sprites/platform.png" id="2_v4qin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nbvy"]
+size = Vector2(33, 9)
+
+[node name="GhostPlatform" type="StaticBody2D"]
+visible = false
+script = ExtResource("1_v4qin")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_v4qin")
+region_rect = Rect2(15.7185135, 0, 33.19873, 10.462997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_6nbvy")
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

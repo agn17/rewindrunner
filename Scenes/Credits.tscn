@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs0oryges2uga"]
+
+[ext_resource type="Script" uid="uid://ccbhtps8rlr7g" path="res://Scenes/credits.gd" id="1_i8h6y"]
+[ext_resource type="Texture2D" uid="uid://cpku2js01jm1a" path="res://Assets/B1013-4.png" id="2_xbebw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8h6y")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xbebw")
+
+[node name="CreditsComtainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameTitle" type="Label" parent="CreditsComtainer"]
+layout_mode = 2
+text = "REWIND RUNNER"
+
+[node name="CompletionTitle" type="Label" parent="CreditsComtainer"]
+layout_mode = 2
+text = "Game Completed"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsComtainer"]
+layout_mode = 2
+
+[node name="TotalTime" type="Label" parent="CreditsComtainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TotalRewinds" type="Label" parent="CreditsComtainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OverallGrade" type="Label" parent="CreditsComtainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CreditList" type="VBoxContainer" parent="CreditsComtainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CreditLine" type="Label" parent="CreditsComtainer/VBoxContainer/CreditList"]
+layout_mode = 2
+text = "Design & Programming: That_Roger"
+
+[node name="CreditName" type="Label" parent="CreditsComtainer/VBoxContainer/CreditList"]
+layout_mode = 2
+text = "Sprites by: Brackeys"
+
+[node name="ThankYOU" type="Label" parent="CreditsComtainer/VBoxContainer"]
+layout_mode = 2
+text = "Thanks for Playing"
+
+[node name="Button" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="playagain" type="Button" parent="Button"]
+layout_mode = 2
+
+[node name="mainmenu" type="Button" parent="Button"]
+layout_mode = 2

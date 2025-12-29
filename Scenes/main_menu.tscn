@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfdfxs2pjk8mc"]
+
+[ext_resource type="Script" uid="uid://bf175mhdxuxng" path="res://Scenes/background.gd" id="1_28flt"]
+[ext_resource type="Script" uid="uid://bdfaut2yuswn0" path="res://Scenes/main_menu.gd" id="1_48xlc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_28flt"]
+font_size = 64
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
+font_size = 24
+font_color = Color(0.6784314, 0.84705883, 0.9019608, 1)
+
+[sub_resource type="Animation" id="Animation_48xlc"]
+resource_name = "title_enter"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ehe0"]
+_data = {
+&"title_enter": SubResource("Animation_48xlc")
+}
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_48xlc")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_28flt")
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 39.0
+
+[node name="TitleContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 84.0
+offset_right = 915.0
+offset_bottom = 210.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleContainer"]
+layout_mode = 2
+
+[node name="Gametitle" type="Label" parent="TitleContainer/VBoxContainer"]
+layout_mode = 2
+text = "REWIND RUNNER"
+label_settings = SubResource("LabelSettings_28flt")
+
+[node name="Subtitle" type="Label" parent="TitleContainer/VBoxContainer"]
+layout_mode = 2
+text = "A Time-Bending Platformer"
+label_settings = SubResource("LabelSettings_48xlc")
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 321.0
+offset_right = 676.0
+offset_bottom = 479.0
+
+[node name="StartButton" type="Button" parent="MenuButtons"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.6784314, 0.84705883, 0.9019608, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="LevelSelectButton" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Level Select"
+
+[node name="OptionsButton" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1ehe0")
+}
